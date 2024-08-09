@@ -5,7 +5,17 @@
 docker build -t squaresapp .
 docker run -p 5000:5000 squaresapp
 
-
+-- alternatively run Rancher
+        #build container image
+    nerdctl build -t squaresapp .
+        #run container image
+    nerdctl run -d -p 5000:5000 --name squaresapp squaresapp
+        #to view current images
+        nerdctl images
+        #to view current containers
+        nerdctl ps
+        #to view image metadata
+        nerdctl image inspect squaresapp
 #run postman
 config POST  http://localhost:5000/square
 config body raw json 
